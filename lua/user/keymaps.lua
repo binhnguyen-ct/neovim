@@ -78,3 +78,18 @@ keymap("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>", opts)
 keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", opts)
 keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts)
 keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
+
+
+-- Terminal
+keymap("n", "<c-t>", "<cmd>exe v:count1 . 'ToggleTerm'<CR>", opts)
+keymap("i", "<c-t>", "<esc><cmd>exe v:count1 . 'ToggleTerm'<CR>", opts)
+vim.api.nvim_create_autocmd("TermEnter", {
+  pattern = "term://*toggleterm#*",
+  callback = function()
+    keymap("t", "<c-t>", "<cmd>exe v:count1 . 'ToggleTerm'<CR>", opts)
+  end,
+})
+
+-- Editor
+keymap("n", "<c-s>", ":w<cr>", opts)
+keymap("i", "<c-s>", "<esc>:w<cr>", opts)
