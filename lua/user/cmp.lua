@@ -49,7 +49,14 @@ cmp.setup({
 			luasnip.lsp_expand(args.body) -- For `luasnip` users.
 		end,
 	},
-
+  enabled = function ()
+    local in_prompt = vim.api.nvim_buf_get_option(0, 'buftype') == 'prompt'
+    if in_prompt then
+      return false
+    end
+    local context = require("cmp.config.context")
+    return not(context.in_treesitter_capture("comment") == true or context.in_syntax_group("Comment"))
+  end,
 	mapping = cmp.mapping.preset.insert({
 		["<C-k>"] = cmp.mapping.select_prev_item(),
 		["<C-j>"] = cmp.mapping.select_next_item(),
