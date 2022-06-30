@@ -55,7 +55,16 @@ cmp.setup({
       return false
     end
     local context = require("cmp.config.context")
-    return not(context.in_treesitter_capture("comment") == true or context.in_syntax_group("Comment"))
+    local in_comment = context.in_treesitter_capture("comment") == true or context.in_syntax_group("Comment")
+    if in_comment then
+      return false
+    end
+    local in_string_number = context.in_treesitter_capture("string") == true or context.in_treesitter_capture("number") == true
+    if in_string_number then
+      return false
+    end
+    return true
+
   end,
 	mapping = cmp.mapping.preset.insert({
 		["<C-k>"] = cmp.mapping.select_prev_item(),

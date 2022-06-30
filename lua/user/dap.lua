@@ -27,6 +27,7 @@ dapui.setup {
         id = "scopes",
         size = 0.25, -- Can be float or integer > 1
       },
+      { id = "watches", size=0.25},
       { id = "breakpoints", size = 0.25 },
     },
     size = 40,

@@ -5,7 +5,7 @@ end
 
 bufferline.setup {
   options = {
-    numbers = "none", -- | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
+    numbers = "ordinal", -- | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
     close_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
     right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
     left_mouse_command = "buffer %d", -- can be a string | function, see "Mouse actions"
@@ -64,7 +64,7 @@ bufferline.setup {
     persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
     -- can also be a table containing 2 custom separators
     -- [focused and unfocused]. eg: { '|', '|' }
-    separator_style = "thin", -- | "thick" | "thin" | { 'any', 'any' },
+    separator_style = "thick", -- | "thick" | "thin" | { 'any', 'any' },
     enforce_regular_tabs = true,
     always_show_bufferline = true,
     -- sort_by = 'id' | 'extension' | 'relative_directory' | 'directory' | 'tabs' | function(buffer_a, buffer_b)
@@ -82,11 +82,10 @@ bufferline.setup {
       guibg = { attribute = "bg", highlight = "TabLine" },
     },
 
-    -- buffer_selected = {
-    --   guifg = {attribute='fg',highlight='#ff0000'},
-    --   guibg = {attribute='bg',highlight='#0000ff'},
-    --   gui = 'none'
-    --   },
+    buffer_selected = {
+      guifg = { attribute = "fg", highlight = "Normal" },
+      gui = "bold,italic"
+      },
     buffer_visible = {
       guifg = { attribute = "fg", highlight = "TabLine" },
       guibg = { attribute = "bg", highlight = "TabLine" },
@@ -156,13 +155,16 @@ bufferline.setup {
       guifg = { attribute = "bg", highlight = "Normal" },
       guibg = { attribute = "bg", highlight = "Normal" },
     },
-    -- separator_visible = {
-    --   guifg = {attribute='bg',highlight='TabLine'},
-    --   guibg = {attribute='bg',highlight='TabLine'}
-    --   },
+    separator_visible = {
+      guifg = {attribute='bg',highlight='TabLine'},
+      guibg = {attribute='bg',highlight='TabLine'}
+      },
     indicator_selected = {
       guifg = { attribute = "fg", highlight = "LspDiagnosticsDefaultHint" },
       guibg = { attribute = "bg", highlight = "Normal" },
+    },
+    numbers_selected = {
+      guifg = { attribute = "fg", highlight = "Normal" },
     },
   },
 }
