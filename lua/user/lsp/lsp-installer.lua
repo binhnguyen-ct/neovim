@@ -18,6 +18,7 @@ local servers = {
   "yamlls",
   "bashls",
   "clangd",
+  "gopls",
 }
 
 local settings = {
@@ -91,6 +92,11 @@ for _, server in pairs(servers) do
   if server == "emmet_ls" then
     local emmet_ls_opts = require "user.lsp.settings.emmet_ls"
     opts = vim.tbl_deep_extend("force", emmet_ls_opts, opts)
+  end
+
+  if server == "gopls" then
+    local golsp_opts = require "user.lsp.settings.gopls"
+    opts = vim.tbl_deep_extend("force", golsp_opts, opts)
   end
 
   lspconfig[server].setup(opts)

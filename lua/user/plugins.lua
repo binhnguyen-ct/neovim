@@ -72,6 +72,8 @@ return packer.startup(function(use)
   use "folke/tokyonight.nvim"
   use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use "lunarvim/darkplus.nvim"
+  use "jacoborus/tender.vim"
+  use "EdenEast/nightfox.nvim"
 
     -- Treesitter
   use {
