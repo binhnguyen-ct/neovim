@@ -85,6 +85,7 @@ return packer.startup(function(use)
     -- Telescope
   use "nvim-telescope/telescope.nvim"
   use "nvim-telescope/telescope-media-files.nvim"
+  use { "nvim-telescope/telescope-file-browser.nvim" }
 
     -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP

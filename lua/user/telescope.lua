@@ -12,7 +12,7 @@ telescope.setup {
 
     prompt_prefix = icons.ui.Telescope .. " ",
     selection_caret = " ",
-    path_display = { "smart" },
+    -- path_display = { "smart" },
     file_ignore_patterns = { ".git/", "node_modules/", "target/", "docs/", ".settings/" },
 
     mappings = {
@@ -98,5 +98,18 @@ telescope.setup {
       filetypes = { "png", "webp", "jpg", "jpeg" },
       find_cmd = "rg", -- find command (defaults to `fd`)
     },
+    file_browser = {
+        theme = "ivy",
+        -- disables netrw and use telescope-file-browser in its place
+        hijack_netrw = true,
+        mappings = {
+          ["i"] = {
+            -- your custom insert mode mappings
+          },
+          ["n"] = {
+            -- your custom normal mode mappings
+          },
+        },
+      },
   },
 }
