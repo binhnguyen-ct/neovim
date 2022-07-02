@@ -56,6 +56,7 @@ return packer.startup(function(use)
     "lukas-reineke/indent-blankline.nvim", 
     commit = "6177a59552e35dfb69e1493fd68194e673dc3ee2" 
   }
+  use "Vimjas/vim-python-pep8-indent"
 
     -- cmp plugins
   use { "hrsh7th/nvim-cmp", commit = "df6734aa018d6feb4d76ba6bda94b1aeac2b378a" } -- The completion plugin

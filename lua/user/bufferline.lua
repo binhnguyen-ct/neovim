@@ -152,18 +152,21 @@ bufferline.setup {
       guifg = { attribute = "bg", highlight = "TabLine" },
       guibg = { attribute = "bg", highlight = "TabLine" },
     },
-    separator_selected = {
-      guifg = { attribute = "bg", highlight = "Normal" },
-      guibg = { attribute = "bg", highlight = "Normal" },
-    },
-    -- separator_visible = {
-    --   guifg = {attribute='bg',highlight='TabLine'},
-    --   guibg = {attribute='bg',highlight='TabLine'}
-    --   },
+    -- separator_selected = {
+    --   guifg = { attribute = "bg", highlight = "Normal" },
+    --   guibg = { attribute = "bg", highlight = "Normal" },
+    -- },
+    separator_visible = {
+      guifg = {attribute='bg',highlight='TabLine'},
+      guibg = {attribute='bg',highlight='TabLine'}
+      },
     indicator_selected = {
       guifg = { attribute = "fg", highlight = "LspDiagnosticsDefaultHint" },
       guibg = { attribute = "bg", highlight = "Normal" },
     },
+    separator_selected = {
+      guifg = { attribute = "bg", highlight = "TabLine" },
+    }
   },
 }
 
